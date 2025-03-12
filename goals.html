@@ -6,11 +6,71 @@
     <title>Metas del ODS 3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicom.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: white;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .box:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .number {
+            font-size: 60px;
+            font-weight: bold;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .unit {
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .text {
+            margin-top: 10px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .box:hover .number,
+        .box:hover .unit,
+        .box:hover .text {
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="index.html"><img src="images/logo-agenda-2030.png" alt="logo agenda 2030" class="logo"></a>
-        <h1>Metas del ODS 3</h1>
+        <h1>ODS 3: Salud y Bienestar</h1>
+        <div class="hamburger">
+            <img src="images/pngegg.png" alt="Menu">
+        </div>
     </header>
     <nav>
         <ul>
@@ -25,20 +85,57 @@
         </ul>
     </nav>
     <main>
-        <section class="texto-fondo-blanco">
-            <h2 class="titulo-principal">Metas del ODS 3</h2>
-            <div class="metas-grid">
-                <div class="meta-item">Reducir la tasa mundial de mortalidad materna a menos de 70 por cada 100,000 nacidos vivos.</div>
-                <div class="meta-item">Poner fin a las epidemias de SIDA, tuberculosis, malaria y enfermedades tropicales desatendidas.</div>
-                <div class="meta-item">Reducir en un tercio la mortalidad prematura por enfermedades no transmisibles.</div>
-                <div class="meta-item">Lograr la cobertura sanitaria universal.</div>
-                <div class="meta-item">Garantizar el acceso a medicamentos y vacunas esenciales a precios asequibles.</div>
-                <div class="meta-item">Reducir las muertes y lesiones causadas por accidentes de tráfico.</div>
-                <div class="meta-item">Garantizar el acceso universal a servicios de salud sexual y reproductiva.</div>
-                <div class="meta-item">Aumentar la financiación de la salud y la contratación, desarrollo, formación y retención del personal sanitario.</div>
-                <div class="meta-item">Fortalecer la capacidad de todos los países en materia de alerta temprana, reducción de riesgos y gestión de los riesgos para la salud nacional y mundial.</div>
-            </div>
-        </section>
+        <div class="main-container">
+            <section class="texto-fondo-blanco">
+                <h2 class="titulo-principal">Metas del ODS 3</h2>
+                <div class="metas-grid">
+                    <div class="meta-item">Reducir la tasa mundial de mortalidad materna a menos de 70 por cada 100,000 nacidos vivos.</div>
+                    <div class="meta-item">Poner fin a las epidemias de SIDA, tuberculosis, malaria y enfermedades tropicales desatendidas.</div>
+                    <div class="meta-item">Reducir en un tercio la mortalidad prematura por enfermedades no transmisibles.</div>
+                    <div class="meta-item">Lograr la cobertura sanitaria universal.</div>
+                    <div class="meta-item">Garantizar el acceso a medicamentos y vacunas esenciales a precios asequibles.</div>
+                    <div class="meta-item">Reducir las muertes y lesiones causadas por accidentes de tráfico.</div>
+                    <div class="meta-item">Garantizar el acceso universal a servicios de salud sexual y reproductiva.</div>
+                    <div class="meta-item">Aumentar la financiación de la salud y la contratación, desarrollo, formación y retención del personal sanitario.</div>
+                    <div class="meta-item">Fortalecer la capacidad de todos los países en materia de alerta temprana, reducción de riesgos y gestión de los riesgos para la salud nacional y mundial.</div>
+                </div>
+            </section>
+            <section class="texto-fondo-blanco">
+                <div class="container">
+                    <div class="box">
+                        <span class="number">400</span>
+                        <span class="unit">millones</span>
+                        <p class="text">De personas, al menos, no tienen acceso a servicios de salud básicos y el 40 % carece de protección social.</p>
+                    </div>
+                    <div class="box">
+                        <span class="number">+ 1,6</span>
+                        <span class="unit">mil millones</span>
+                        <p class="text">De personas viven en ambientes frágiles donde las crisis prolongadas presentan un desafío significativo para la salud global.</p>
+                    </div>
+                    <div class="box">
+                        <span class="number">15</span>
+                        <span class="unit">millones</span>
+                        <p class="text">A finales del 2017, 21,7 millones de personas con VIH recibieron tratamiento, pero 15 millones aún esperan.</p>
+                    </div>
+                    <div class="box">
+                        <span class="number">2</span>
+                        <span class="unit">segundos</span>
+                        <p class="text">Es el tiempo en el que alguien entre 30 y 70 años muere prematuramente por enfermedades no transmisibles como cáncer o diabetes.</p>
+                    </div>
+                    <!-- Datos adicionales -->
+                    <div class="box">
+                        <span class="number">3</span>
+                        <span class="unit">millones</span>
+                        <p class="text">De personas mueren debido a la exposición a la contaminación del aire.</p>
+                    </div>
+                    <div class="box">
+                        <span class="number">1</span>
+                        <span class="unit">de cada 10</span>
+                        <p class="text">Personas en el mundo sufre de hambre crónica.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
         <section class="texto-fondo-blanco">
             <h2 class="titulo-principal">Indicadores Clave del ODS 3</h2>
             <table>
@@ -52,34 +149,34 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tasa de mortalidad materna</td>
-                        <td>Número de muertes maternas por cada 100,000 nacidos vivos</td>
-                        <td>Menos de 70</td>
-                        <td>211</td> <!-- Dato actual -->
+                        <td data-label="Indicador">Tasa de mortalidad materna</td>
+                        <td data-label="Descripción">Número de muertes maternas por cada 100,000 nacidos vivos</td>
+                        <td data-label="Meta">Menos de 70</td>
+                        <td data-label="Dato Actual">211</td> <!-- Dato actual -->
                     </tr>
                     <tr>
-                        <td>Tasa de mortalidad infantil</td>
-                        <td>Número de muertes de niños menores de 5 años por cada 1,000 nacidos vivos</td>
-                        <td>Menos de 25</td>
-                        <td>38</td> <!-- Dato actual -->
+                        <td data-label="Indicador">Tasa de mortalidad infantil</td>
+                        <td data-label="Descripción">Número de muertes de niños menores de 5 años por cada 1,000 nacidos vivos</td>
+                        <td data-label="Meta">Menos de 25</td>
+                        <td data-label="Dato Actual">38</td> <!-- Dato actual -->
                     </tr>
                     <tr>
-                        <td>Incidencia de VIH</td>
-                        <td>Número de nuevas infecciones por VIH por cada 1,000 personas no infectadas</td>
-                        <td>Menos de 0.1</td>
-                        <td>0.24</td> <!-- Dato actual -->
+                        <td data-label="Indicador">Incidencia de VIH</td>
+                        <td data-label="Descripción">Número de nuevas infecciones por VIH por cada 1,000 personas no infectadas</td>
+                        <td data-label="Meta">Menos de 0.1</td>
+                        <td data-label="Dato Actual">0.24</td> <!-- Dato actual -->
                     </tr>
                     <tr>
-                        <td>Acceso a servicios de salud</td>
-                        <td>Porcentaje de la población con acceso a servicios de salud esenciales</td>
-                        <td>100%</td>
-                        <td>65%</td> <!-- Dato actual -->
+                        <td data-label="Indicador">Acceso a servicios de salud</td>
+                        <td data-label="Descripción">Porcentaje de la población con acceso a servicios de salud esenciales</td>
+                        <td data-label="Meta">100%</td>
+                        <td data-label="Dato Actual">65%</td> <!-- Dato actual -->
                     </tr>
                     <tr>
-                        <td>Acceso a medicamentos y vacunas</td>
-                        <td>Porcentaje de la población con acceso a medicamentos y vacunas esenciales a precios asequibles</td>
-                        <td>100%</td>
-                        <td>70%</td> <!-- Dato actual -->
+                        <td data-label="Indicador">Acceso a medicamentos y vacunas</td>
+                        <td data-label="Descripción">Porcentaje de la población con acceso a medicamentos y vacunas esenciales a precios asequibles</td>
+                        <td data-label="Meta">100%</td>
+                        <td data-label="Dato Actual">70%</td> <!-- Dato actual -->
                     </tr>
                 </tbody>
             </table>
@@ -88,5 +185,10 @@
     <footer>
         <p>&copy; 2023 Agenda 2030 - Salud y Bienestar</p>
     </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.body.classList.toggle('nav-open');
+        });
+    </script>
 </body>
 </html>

@@ -298,3 +298,259 @@ table tbody tr:last-of-type {
         width: calc(100% - 40px); /* Ancho de cada caja para pantallas muy pequeñas */
     }
 }
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #dddddd; /* Añadir borde a la tabla */
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; /* Añadir borde a las celdas */
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Estilos responsivos para la tabla */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    table thead, table tbody, table th, table td, table tr {
+        display: block;
+    }
+
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid #dddddd;
+    }
+
+    table td {
+        border: none;
+        border-bottom: 1px solid #dddddd;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+/* Estilos para el menú hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.hamburger img {
+    width: 30px;
+    height: auto;
+}
+
+/* Estilos para el menú comprimido */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+    }
+
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li a:hover {
+        background-color: #575757;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-open nav ul {
+        display: flex;
+    }
+}
+
+/* Estilos para el contenedor principal */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.main-container > section {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #dddddd; /* Añadir borde a la tabla */
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd; /* Añadir borde a las celdas */
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Estilos responsivos para la tabla */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    table thead, table tbody, table th, table td, table tr {
+        display: block;
+    }
+
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        border: 1px solid #dddddd;
+    }
+
+    table td {
+        border: none;
+        border-bottom: 1px solid #dddddd;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+/* Estilos para las cajas de las metas */
+.metas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.meta-item {
+    background: #f4f4f4; /* Fondo gris claro */
+    padding: 20px; /* Espacio interior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: calc(33% - 40px); /* Ancho de cada caja */
+    box-sizing: border-box;
+    text-align: left;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+}
+
+.meta-item:hover {
+    transform: scale(1.05);
+    border: 2px solid #4caf50; /* Borde verde al hacer hover */
+}
+
+@media (max-width: 768px) {
+    .meta-item {
+        width: calc(50% - 40px); /* Ancho de cada caja para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .meta-item {
+        width: calc(100% - 40px); /* Ancho de cada caja para pantallas muy pequeñas */
+    }
+}
+
+

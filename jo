@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            background: white;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .box:hover {
+            background: #4caf50;
+            color: white;
+        }
+
+        .number {
+            font-size: 60px;
+            font-weight: bold;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .unit {
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .text {
+            margin-top: 10px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .box:hover .number,
+        .box:hover .unit,
+        .box:hover .text {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <span class="number">400</span>
+            <span class="unit">millones</span>
+            <p class="text">Al menos 400 millones de personas no tienen acceso a servicios de salud básicos y el 40 % carece de protección social.</p>
+        </div>
+        <div class="box">
+            <span class="number">+ 1,6</span>
+            <span class="unit">mil millones</span>
+            <p class="text">Más de 1,6 mil millones de personas viven en ambientes frágiles donde las crisis prolongadas presentan un desafío significativo para la salud global.</p>
+        </div>
+        <div class="box">
+            <span class="number">15</span>
+            <span class="unit">millones</span>
+            <p class="text">A finales del 2017, 21,7 millones de personas con VIH recibieron tratamiento, pero 15 millones aún esperan.</p>
+        </div>
+        <div class="box">
+            <span class="number">2</span>
+            <span class="unit">segundos</span>
+            <p class="text">Cada dos segundos, alguien entre 30 y 70 años muere prematuramente por enfermedades no transmisibles como cáncer o diabetes.</p>
+        </div>
+    </div>
+
+</body>
+</html>
