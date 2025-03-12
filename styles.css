@@ -10,10 +10,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
-    padding: 20px; /* Añade un poco de espacio alrededor del contenido */
+    padding: 20px;
 }
 
-/* Estilos del header */
 /* Estilos del header */
 header {
     background-color: #A8E6A3;
@@ -24,28 +23,25 @@ header {
     justify-content: center;
     gap: 20px;
     border: 2px solid #333;
-    border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+    border-radius: 10px 10px 0 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-bottom: none; /* Elimina el borde inferior */
+    border-bottom: none;
 }
 
 /* Estilos del menú */
 nav {
     background-color: #333;
     padding: 10px;
-    margin-top: 0px;
-    border-radius: 0 0 5px 5px; /* Bordes redondeados solo abajo */
-    border-top: 2px solid #333; /* Añade un borde superior para coincidir */
+    margin-top: -2px; /* Corregir el margen superior */
+    border-radius: 0 0 5px 5px;
+    border-top: 2px solid #333;
 }
-
 
 /* Estilos del logo */
 .logo {
-    width: 100px; /* Ajusta el tamaño de la imagen */
+    width: 100px;
     height: auto;
 }
-
-
 
 nav ul {
     list-style: none;
@@ -55,6 +51,7 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    list-style: none;
 }
 
 nav ul li a {
@@ -62,11 +59,15 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
     background-color: #575757;
+}
+
+.areas {
+    list-style: none;
 }
 
 /* Secciones con fondo blanco y estilo mejorado */
@@ -75,15 +76,15 @@ nav ul li a:hover {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-    text-align: left; /* Texto alineado a la izquierda */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
 
 /* Ajustes de la imagen */
 .ods-logo {
     display: block;
-    margin: 20px auto; /* Añade un margen superior de 20px */
+    margin: 20px auto;
     width: 150px;
 }
 
@@ -96,15 +97,32 @@ h1, h2 {
 p {
     color: #444;
     line-height: 1.6;
-    margin-bottom: 20px; /* Espacio inferior entre párrafos */
+    margin-bottom: 20px;
 }
 
 /* Estilo de listas dentro del rectángulo */
 .texto-fondo-blanco ul {
-    list-style-type: disc; /* Viñetas visibles */
-    padding-left: 40px; /* Espaciado adecuado */
-    display: inline-block; /* Evita que la lista se expanda al 100% */
-    margin-bottom: 20px; /* Espacio inferior entre listas */
+    list-style-type: disc;
+    padding-left: 40px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Estilos del botón "Saber más" */
+.btn-saber-mas {
+    display: inline-block;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-saber-mas:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el ratón */
 }
 
 /* Estilos del pie de página */
@@ -114,7 +132,7 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 20px;
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 5px;
 }
 
 /* Media Queries para hacer la página responsive */
@@ -158,4 +176,16 @@ footer {
     p {
         font-size: 14px;
     }
+}
+
+
+/* Estilos para la nueva imagen rectangular (banner) */
+.banner-ods {
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+    max-width: 900px; /* Limitamos el ancho máximo para que no se vea demasiado grande */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    display: block;
+    margin: 20px auto; /* Centramos la imagen y añadimos un margen superior e inferior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
