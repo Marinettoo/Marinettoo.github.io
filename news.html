@@ -6,6 +6,86 @@
     <title>Noticias ODS 3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicom.jpg">
+    <style>
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .news-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: calc(33% - 40px);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .news-box:hover {
+            transform: scale(1.05);
+            background-color: #e0e0e0;
+        }
+
+        .news-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .news-box h3 {
+            color: #4caf50;
+            margin: 10px 0;
+        }
+
+        .news-box p {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .news-box {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .news-box {
+                width: 100%;
+            }
+        }
+
+        .titulo-principal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .titulo-principal img {
+            width: 50px;
+            height: auto;
+        }
+
+        .btn-mas-noticias {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-mas-noticias:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,19 +109,40 @@
     </nav>
     <main>
         <section class="texto-fondo-blanco">
-            <h2>Últimas Noticias</h2>
-            <article>
-                <h3>Nuevo informe sobre la salud global</h3>
-                <p>La OMS ha publicado un nuevo informe que destaca los avances y desafíos en la salud global. <a href="#" target="_blank">Leer más</a></p>
-            </article>
-            <article>
-                <h3>Lanzamiento de una nueva vacuna contra la malaria</h3>
-                <p>Una nueva vacuna promete reducir significativamente los casos de malaria en África. <a href="#" target="_blank">Leer más</a></p>
-            </article>
-            <article>
-                <h3>Conferencia internacional sobre salud mental</h3>
-                <p>Expertos de todo el mundo se reúnen para discutir estrategias para mejorar la salud mental. <a href="#" target="_blank">Leer más</a></p>
-            </article>
+            <h2 class="titulo-principal">
+                Últimas Noticias
+                <img src="images/en-directo.gif" alt="En Vivo">
+            </h2>
+            <div class="news-container">
+                <div class="news-box" onclick="window.open('https://www.un.org/es/observances/day-of-persons-with-disabilities', '_blank')">
+                    <img src="images/news1.jpg" alt="Día Internacional de las Personas con Discapacidad">
+                    <h3>Día Internacional de las Personas con Discapacidad</h3>
+                    <p>La ONU celebra el Día Internacional de las Personas con Discapacidad para promover los derechos y el bienestar de las personas con discapacidades.</p>
+                </div>
+                <div class="news-box" onclick="window.open('https://www.pactomundial.org/noticia/en-que-situacion-se-encuentran-los-ods-de-la-agenda-2030/', '_blank')">
+                    <img src="images/news2.jpg" alt="Situación de los ODS de la Agenda 2030">
+                    <h3>Situación de los ODS de la Agenda 2030</h3>
+                    <p>Un informe reciente analiza el progreso y los desafíos en la implementación de los ODS de la Agenda 2030.</p>
+                </div>
+                <div class="news-box" onclick="window.open('https://www.paho.org/es/noticias/8-9-2024-personal-salud-fortalece-capacidades-para-monitoreo-eficiente-indicadores-ods-3', '_blank')">
+                    <img src="images/news3.png" alt="Monitoreo de Indicadores ODS 3">
+                    <h3>Monitoreo de Indicadores ODS 3</h3>
+                    <p>El personal de salud fortalece sus capacidades para un monitoreo eficiente de los indicadores del ODS 3.</p>
+                </div>
+                <div class="news-box" onclick="window.open('https://diarioresponsable.com/noticias/37160-las-empresas-espanolas-refuerzan-su-compromiso-con-los-ods', '_blank')">
+                    <img src="images/news4.jpg" alt="Empresas Españolas y los ODS">
+                    <h3>Empresas Españolas y los ODS</h3>
+                    <p>Las empresas españolas refuerzan su compromiso con los Objetivos de Desarrollo Sostenible.</p>
+                </div>
+                <div class="news-box" onclick="window.open('https://www.corresponsables.com/actualidad/social/ods3-silvia-segarra-directora-comunicacion-institucional-aldi-eduardo-mas-quality-and-corporate-responsibility-director/', '_blank')">
+                    <img src="images/news5.jpg" alt="ODS 3 y Responsabilidad Corporativa">
+                    <h3>ODS 3 y Responsabilidad Corporativa</h3>
+                    <p>Directores de comunicación y responsabilidad corporativa discuten sobre el impacto del ODS 3 en sus empresas.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://news.google.com/search?q=ods%203&hl=es&gl=ES&ceid=ES%3Aes" class="btn-mas-noticias" target="_blank">Más Noticias</a>
+            </div>
         </section>
     </main>
     <footer>

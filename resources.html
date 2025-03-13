@@ -6,6 +6,43 @@
     <title>Recursos ODS 3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicom.jpg">
+    <style>
+        .resource-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .resource-box:hover {
+            background-color: #e0e0e0;
+        }
+
+        .resource-box a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+
+        .resource-box a:hover {
+            text-decoration: underline;
+        }
+
+        .resource-box img {
+            width: 100%;
+            max-width: 300px; /* Tamaño máximo de las imágenes */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .texto {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,13 +67,27 @@
     <main>
         <section class="texto-fondo-blanco">
             <h2 class="titulo-principal">Recursos y Herramientas</h2>
-            <p>Aquí encontrarás una selección de recursos útiles para profundizar en el ODS 3:</p>
-            <ul>
-                <li><a href="https://www.un.org/sustainabledevelopment/es/health/" target="_blank">Página oficial de la ONU sobre ODS 3</a></li>
-                <li><a href="https://www.who.int/es" target="_blank">Organización Mundial de la Salud (OMS)</a></li>
-                <li><a href="https://www.unicef.org/es" target="_blank">UNICEF</a></li>
-                <li><a href="https://www.worldbank.org/en/topic/health" target="_blank">Banco Mundial - Salud</a></li>
-            </ul>
+            <p class="texto">Aquí encontrarás una selección de recursos útiles para profundizar en el ODS 3:</p>
+            <div class="resource-box">
+                <a href="https://www.un.org/sustainabledevelopment/es/health/" target="_blank">
+                    <img src="images/naciones unida.png" alt="Página oficial de la ONU sobre ODS 3">
+                </a>
+            </div>
+            <div class="resource-box">
+                <a href="https://www.who.int/es" target="_blank">
+                    <img src="images/oms-logo.png" alt="Organización Mundial de la Salud (OMS)">
+                </a>
+            </div>
+            <div class="resource-box">
+                <a href="https://www.unicef.org/es" target="_blank">
+                    <img src="images/Logo_of_UNICEF.svg.png" alt="UNICEF">
+                </a>
+            </div>
+            <div class="resource-box">
+                <a href="https://www.worldbank.org/en/topic/health" target="_blank">
+                    <img src="images/worldbankv2-01.jpg" alt="Banco Mundial - Salud">
+                </a>
+            </div>
         </section>
     </main>
     <footer>

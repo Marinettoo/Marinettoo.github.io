@@ -6,6 +6,56 @@
     <title>Proyectos ODS 3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicom.jpg">
+    <style>
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            max-width: 200px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .project-content {
+            flex: 1;
+        }
+
+        .project h3 {
+            margin-top: 0;
+            color: #4caf50;
+        }
+
+        .project p {
+            margin: 10px 0;
+        }
+
+        .btn-saber-mas {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-saber-mas:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,13 +80,41 @@
     <main>
         <section class="texto-fondo-blanco">
             <h2 class="titulo-principal">Proyectos Relacionados con el ODS 3</h2>
-            <p>Aquí puedes encontrar algunos de los proyectos más destacados relacionados con el ODS 3:</p>
-            <ul>
-                <li><strong>Proyecto de Salud Materna:</strong> Mejora de la atención prenatal y postnatal en zonas rurales.</li>
-                <li><strong>Lucha contra el VIH/SIDA:</strong> Programas de prevención y tratamiento en África Subsahariana.</li>
-                <li><strong>Acceso a Medicamentos:</strong> Distribución de medicamentos esenciales en países de bajos ingresos.</li>
-                <li><strong>Salud Mental:</strong> Campañas de concienciación y apoyo psicológico en comunidades vulnerables.</li>
-            </ul>
+            <div class="project">
+                <img src="images/santa maria.jpg" alt="Banco de Sangre Santa María">
+                <div class="project-content">
+                    <h3>País: Colombia</h3>
+                    <p><strong>Organización:</strong> Banco de Sangre Santa María</p>
+                    <p>Para el Día de las Buenas Acciones 2022, el banco de sangre local, Banco de Sangre Santa María, se unió a compañías locales y universidades de la Municipalidad de Sucre y organizó una campaña de donación de sangre. Donar sangre es simple y salva vidas todos los días.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/usa.jpg" alt="HandsOn San Diego">
+                <div class="project-content">
+                    <h3>País: Estados Unidos</h3>
+                    <p><strong>Organización:</strong> HandsOn San Diego</p>
+                    <p>Auntie Helen es una organización que provee de comida y vestimenta, entre otras donaciones, a personas de bajos ingresos y personas con alguna condición de salud tal como HIV/SIDA. En el Día de las Buenas Acciones, HandsOn San Diego se alió con Auntie Helen y colaboró con la clasificación, empaque y distribución de ropa en varias áreas designadas.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/nigeria.jpg" alt="Kleo Aid Foundation for Children">
+                <div class="project-content">
+                    <h3>País: Nigeria</h3>
+                    <p><strong>Organización:</strong> Kleo Aid Foundation for Children</p>
+                    <p>Kleo Aid Foundation for Children (Fundación para los Niños Kleo Aid) implementó dos proyectos enfocados en Salud y Bienestar para el Día de las Buenas Acciones. El primer proyecto consistió en capacitar y crear conciencia en la población sobre los síntomas y signos de la tuberculosis, medidas preventivas y también sobre la necesidad de acabar con la estigmatización de los enfermos.</p>
+                    <p>El segundo proyecto fue una campaña de concientización acerca de la importancia de una buena higiene personal para los habitantes del campamento de refugiados de Abuja, en donde también realizaron exámenes de la vista.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="images/haiti.jpg" alt="ANACAONA Community">
+                <div class="project-content">
+                    <h3>País: Haití</h3>
+                    <p><strong>Organización:</strong> ANACAONA Community</p>
+                    <p>En honor al Día de las Buenas Acciones, ANACAONA Community, un negocio social de Haití extendió el trabajo que hacen normalmente en educación en higiene y buenas prácticas de salud y construyó una estación para el lavado de manos en la Escuela Pasteur Dieusse, que se encuentra en Cite-Soleil, una de las comunidades más pobres del país.</p>
+                    <p>Además, ofreció entrenamiento a través de sus embajadores tanto en la escuela como en los hogares para asegurarse que el mensaje llegara a las familias de los estudiantes.</p>
+                </div>
+            </div>
+            <a href="https://www.good-deeds-day.org/es/bienestar-y-salud-6-proyectos-enfocados-en-el-ods-3/" class="btn-saber-mas" target="_blank">Saber más</a>
         </section>
     </main>
     <footer>
