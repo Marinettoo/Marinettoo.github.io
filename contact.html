@@ -55,6 +55,9 @@
     <header>
         <a href="index.html"><img src="images/logo-agenda-2030.png" alt="logo agenda 2030" class="logo"></a>
         <h1>Contacto ODS 3</h1>
+        <div class="hamburger">
+            <img src="images/pngegg.png" alt="Menu">
+        </div>
     </header>
     <nav>
         <ul>
@@ -89,5 +92,10 @@
     <footer>
         <p>&copy; 2023 Agenda 2030 - Salud y Bienestar</p>
     </footer>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.body.classList.toggle('nav-open');
+        });
+    </script>
 </body>
 </html>
