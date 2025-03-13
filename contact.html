@@ -6,6 +6,50 @@
     <title>Contacto ODS 3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicom.jpg">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            color: #4caf50;
+            text-align: center;
+        }
+
+        .contact-container p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-media img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,28 +58,32 @@
     </header>
     <nav>
         <ul>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="ODS.html">Los ODS</a></li> <!-- Nuevo apartado -->
-                <li><a href="about.html">Acerca de</a></li>
-                <li><a href="goals.html">Metas</a></li>
-                <li><a href="projects.html">Proyectos</a></li>
-                <li><a href="resources.html">Recursos</a></li>
-                <li><a href="news.html">Noticias</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-    
-            </ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="ODS.html">Los ODS</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="goals.html">Metas</a></li>
+            <li><a href="projects.html">Proyectos</a></li>
+            <li><a href="resources.html">Recursos</a></li>
+            <li><a href="news.html">Noticias</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+        </ul>
     </nav>
     <main>
-        <section class="texto-fondo-blanco">
+        <section class="contact-container texto-fondo-blanco">
             <h2>Contacto</h2>
             <p>Para más información, por favor contáctenos a través de nuestro correo electrónico: <a href="mailto:info@ods3salud.org">info@ods3salud.org</a></p>
             <p>También puede seguirnos en nuestras redes sociales para estar al tanto de las últimas noticias y actualizaciones:</p>
-            <ul>
-                <li><a href="https://facebook.com/ods3salud" target="_blank">Facebook</a></li>
-                <li><a href="https://twitter.com/ods3salud" target="_blank">Twitter</a></li>
-                <li><a href="https://instagram.com/ods3salud" target="_blank">Instagram</a></li>
-            </ul>
+            <div class="social-media">
+                <a href="https://facebook.com/ods3salud" target="_blank">
+                    <img src="images/facebook-logo.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com/ods3salud" target="_blank">
+                    <img src="images/twitter-logo.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com/ods3salud" target="_blank">
+                    <img src="images/instagram-logo.png" alt="Instagram">
+                </a>
+            </div>
         </section>
     </main>
     <footer>
