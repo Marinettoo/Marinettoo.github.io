@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cátedra Indra - Universidad de Sevilla</title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        :root {
+            --primary-color: #005ca9; /* Azul Indra */
+            --secondary-color: #cc0000; /* Rojo Universidad de Sevilla */
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 1rem ;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 70px;
+            margin-right: 10px;
+        }
+        
+        .navbar {
+            display: flex;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        main {
+            margin-top: 80px;
+        }
+        
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            text-align: justify;
+            margin-bottom: 2rem;
+        }
+        
+        .intro-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .encabezado {
+            width: 100%;
+            height: 444px;
+        }
+
+        .title-text {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        
+        .feature {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Carrusel de Noticias */
+        .news-carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .carousel-container {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--white);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-date {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .carousel-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .carousel-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Proyectos */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Contacto */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin: 0 1rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .navbar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .navbar.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 1.5rem;
+            }
+            
+            .nav-link {
+                margin: 0.3rem 0;
+                padding: 0.5rem 0;
+            }
+            
+            .feature {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .intro-features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .news-image, .project-image {
+                height: 200px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .encabezado {
+                max-height: 200px;
+            }
+            .title-text {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo-container">
+                <a href="#">
+                    <img src="./logocve.png" alt="Logo Cátedra Indra-US" class="logo">
+                </a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="navbar">
+                <a href="#introduccion" class="nav-link active">Introducción</a>
+                <a href="#noticias" class="nav-link">Noticias</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Introducción -->
+        <div style="margin-bottom: 30px;">
+            <img src="./enca1.jpg" class="encabezado" alt="">
+            <div class="title-text"
+            >           
+                Cátedra Indra - Universidad de Sevilla
+            </div>
+    
+        </div>
+        <section id="introduccion">
+            <h2>Cátedra Indra - Universidad de Sevilla</h2>
+            <div class="intro-container">
+                <div class="intro-text">
+                    <p>La Universidad de Sevilla e Indra se enorgullecen de presentar la Cátedra de Vigilancia Espacial en la Escuela
+                        Técnica Superior de Ingeniería (ETSI), una iniciativa que persigue promover la excelencia y el talento en un sector
+                        estratégico para la seguridad y el desarrollo tecnológico nacional. Esta colaboración estratégica tiene como pilares
+                        la investigación científica, la formación especializada en nuevas tecnologías espaciales y la transferencia de conocimiento
+                        entre la academia y la industria, fortaleciendo así el ecosistema de innovación y progreso tecnológico.
+                    </p>
+
+                    <p>La inauguración de la Cátedra Indra de Vigilancia Espacial representa un avance significativo en el 
+                        terreno de la seguridad y la defensa, al facilitar la monitorización de satélites y otros objetos en el espacio, 
+                        gestionar la problemática de la basura espacial, supervisar reentradas controladas y no controladas, 
+                        observar fenómenos de radiación solar que afectan a los satélites y sistemas terrestres, y analizar asteroides cercanos 
+                        a la Tierra que puedan presentar riesgos de colisión. Con este ambicioso proyecto, se sientan las bases para una mayor 
+                        integración entre el conocimiento universitario y las demandas de la industria, garantizando un futuro prometedor en el 
+                        ámbito de la vigilancia espacial.
+
+                    </p>
+                </div>
+
+                <div class="intro-features">
+                    <div class="feature">
+                        <i>🎓</i>
+                        <h3>Misión</h3>
+                        <p>Impulsar la formación especializada en tecnologías de vigilancia espacial y fomentar la empleabilidad de los estudiantes universitarios en el sector aeroespacial y de defensa.</p>
+                    </div>
+                    <div class="feature">
+                        <i>🔍</i>
+                        <h3>Visión</h3>
+                        <p>Ser un referente en la colaboración universidad-empresa para el desarrollo de talento en vigilancia espacial y la investigación aplicada en tecnología aeroespacial.</p>
+                    </div>
+                    <div class="feature">
+                        <i>🎯</i>
+                        <h3>Objetivos</h3>
+                        <p>Desarrollar proyectos innovadores en vigilancia espacial, organizar actividades formativas especializadas y crear oportunidades profesionales para estudiantes en el sector aeroespacial y de defensa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Noticias -->
+        <section id="noticias">
+            <h2>Noticias de Actualidad</h2>
+            <div class="news-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="car1.jpg" alt="La US e Indra crean una cátedra estratégica sobre vigilancia espacial" class="news-image">
+                        <div class="news-content">
+                            <p class="news-date">5 de marzo, 2025</p>
+                            <h3>La US e Indra crean una cátedra estratégica sobre vigilancia espacial</h3>
+                            <p>La Universidad de Sevilla e Indra han presentado en la Escuela Técnica Superior de Ingeniería (ETSI) la cátedra de vigilancia espacial, cuyo principal objetivo es promover la excelencia y el talento en un sector estratégico para la seguridad y desarrollo tecnológico nacional..</p>
+                            <a href="https://www.us.es/actualidad-de-la-us/la-us-e-indra-crean-una-catedra-estrategica-sobre-vigilancia-espacial" class="btn">Leer más</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="car2jpg.jpg" alt="Premios a la Excelencia" class="news-image">
+                        <div class="news-content">
+                            <p class="news-date">5 de marzo, 2025</p>
+                            <h3>Una cátedra de Vigilancia Espacial para los egresados de la US</h3>
+                            <p>La Universidad de Sevilla suma un nuevo marco de colaboración dirigido a los estudiantes y profesionales de Ingeniería.</p>
+                            <a href="https://vivasevilla.es/sevilla/1873625/una-catedra-de-vigilancia-espacial-para-los-egresados-de-la-us/" class="btn">Leer más</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="car2jpg.jpg" alt="Seminario Ciberseguridad" class="news-image">
+                        <div class="news-content">
+                            <p class="news-date">5 de marzo, 2025</p>
+                            <h3>Cátedra de Vigilancia Espacial de la Universidad de Sevilla: "Una oportunidad inmensa para estudiantes y profesionales</h3>
+                            <p>En Hoy por Hoy Sevilla hemos hablado con Rafael Vázquez, director de la cátedra y profesor de la Escuela Técnica de Ingeniería, que nos ha contado los objetivos, actividades y proyectos futuros de su nuevo cargo.</p>
+                            <a href="https://cadenaser.com/andalucia/2025/03/05/catedra-de-vigilancia-espacial-de-la-universidad-de-sevilla-una-oportunidad-inmensa-para-estudiantes-y-profesionales-radio-sevilla/" class="btn">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-buttons">
+                    <button class="carousel-btn prev-btn">←</button>
+                    <button class="carousel-btn next-btn">→</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Proyectos -->
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="-oculus--optimizaci-n-computacional-ultra-r-pida-p.jpg" alt="Smart City Solutions" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">OculUS</h3>
+                        <p>Optimización Computacional Ultra-rápida para la Detección de Anomalías en el Espacio Profundo.</p>
+                        <a href="#" class="btn">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="pred.png" alt="HealthTech" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Proyecto Predator</h3>
+                        <p>Plataforma de Realidad Extendida para la Visualización y Simulación de Trayectorias de Desechos Orbitales.</p>
+                        <a href="#" class="btn">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="spa.png" alt="CyberDefense" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title"> Proyecto SPARK </h3>
+                        <p>Sistema de Predicción Adaptativa de Riesgos de Colisión para la Optimización de Maniobras de Satélites.</p>
+                        <a href="#" class="btn">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="ath.png" alt="Industria 4.0" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Proyecto ATHENA</h3>
+                        <p>Arquitectura Tecnológica Híbrida para el Análisis de Datos Espaciales Nodos AEE.</p>
+                        <a href="#" class="btn">Ver proyecto</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="ODISEA.png" alt="Industria 4.0" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Proyecto ODISEA</h3>
+                        <p>Optimización del Desorbitado Inteligente y Seguro de Estructuras Artificiales: Evaluación Ambiental y Algoritmos Avanzados.</p>
+                        <a href="#" class="btn">Ver proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <p>📍&nbsp;</p>
+                        <p><b>Escuela Técnica Superior de Ingeniería</b>,<br> Universidad de Sevilla<br> Camino de los Descubrimientos  41092  Sevilla</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>📧&nbsp;</p>
+                        <p> rvazquez1@us.es</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>📞&nbsp;</p>
+                        <p>+34 954 48 61 00</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>⏰&nbsp;</p>
+                        <p>Lunes a Viernes: 9:00 - 14:00</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>&nbsp;</h3>
+                        <div class="form-group">
+                            <label><b>Año de creación:</b> 2024</label>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Patrocinador:</b> Indra Sistemas, S.A.
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Director:</b> Rafael Vázquez Valenzuela, Catedrático de Universidad adscrito al Departamento de Ingeniería Aeroespacial y Mecánica de Fluidos de la Universidad de Sevilla.</label>
+                        </div>
+                        <div class="form-group">
+                            <label><b>Sede:</b> E.T.S. Ingeniería</label>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logos">
+                <img src="indra-sistemas-logo.png" alt="Logo Indra" class="footer-logo">
+                <img src="Logo-US-Blanco.png" alt="Logo Universidad de Sevilla" class="footer-logo">
+                <img src="Logo_ETSI_horizontal.png" alt="Logo ETSI" class="footer-logo">
+            </div>
+            <p>© 2025 Cátedra Indra - Universidad de Sevilla. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Navegación responsiva
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navbar = document.querySelector('.navbar');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+        
+        // Links de navegación activos
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+                navbar.classList.remove('active');
+            });
+        });
+        
+        // Carrusel de noticias
+        const carouselContainer = document.querySelector('.carousel-container');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        
+        // Cambio automático de diapositivas cada 5 segundos
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 7000);
+    </script>
+</body>
+</html>
